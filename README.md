@@ -1,19 +1,30 @@
 # Chainalysis-Proj
 A sample project made for Chainalysis Application
 
-# 1. Open your terminal and then type
+# Carry out the following steps:
 
-$ git clone {the url to the GitHub repo}
+# Step 1:
+git clone [repository url]
 
-This clones the repo
+# Step 2:
+cd [local repository]
 
-# 2. cd into the new folder and type
+# Step 3:
+//Check package.json file and ensure scripts are notated as below:
 
-$ npm install
+"scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  
+# Step 4: 
+Delete the node_modules folder and any 'lock' files such as 
+yarn.lock or package-lock.json if present.
 
-This installs the required dependencies
+# Step 5: 
+npm install
 
-# 3. To run the React project.
-$ npm start
-
-You are done! Now you can start editing the React project in the new folder that's created.
+# Step 6:
+npm start
