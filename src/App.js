@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+
 var NumberFormat = require('react-number-format');
 
 class App extends Component { 
@@ -51,45 +52,40 @@ class App extends Component {
     
     Object.keys(this.state.cryptos1).map((key)=>(this.state.cryptos1['ETH'].USD)); //=>(this.state.cryptos1['BTC'].USD))); //bitcoin on Cryptocompare
     
-    var btc1 = (Object.keys(this.state.cryptos1).map((key)=>(this.state.cryptos1['BTC'].USD)));
-    
-    
-    
-    var ETH1 = (Object.keys(this.state.cryptos1).map((key)=>(this.state.cryptos1['ETH'].USD)));
-    var btc2 = (Object.keys(this.state.cryptos2).map((key)=>(this.state.cryptos2['bitcoin'].usd)));//bitcoin on coingecko
-    var ETH2 = (Object.keys(this.state.cryptos2).map((key)=>(this.state.cryptos2['ethereum'].usd)));
+    var btc1 = [];
+    var ETH1 = [];
+    var btc2 = [];
+    var ETH2 = [];
+
+     btc1 = (Object.keys(this.state.cryptos1).map((key)=>(this.state.cryptos1['BTC'].USD)));
+     ETH1 = (Object.keys(this.state.cryptos1).map((key)=>(this.state.cryptos1['ETH'].USD)));
+     btc2 = (Object.keys(this.state.cryptos2).map((key)=>(this.state.cryptos2['bitcoin'].usd)));//bitcoin on coingecko
+     ETH2 = (Object.keys(this.state.cryptos2).map((key)=>(this.state.cryptos2['ethereum'].usd)));
 
     var cheapestbtc, cheapesteth;
-    var text;
-
-    if(btc1<btc2)
+    
+    if(btc1[0]<btc2[0])
     {
       cheapestbtc = "You should buy Bitcoin from CryptoCompare";
     }
-    else if(btc2<btc1)
+    else if(btc2[0]<btc1[0])
     {
       cheapestbtc = "You should buy Bitcoin from Coingecko";
-    }
-    
-    if(ETH1<ETH2)
+    }  
+    if(ETH1[0]<ETH2[0])
     {
       cheapesteth = "You should buy Ethereum from CryptoCompare";
-
     }
-    else if(ETH2<ETH1)
+    else if(ETH2[0]<ETH1[0])
     {
-      cheapesteth = "You should buy Ethereum from Coingecko";
-      
+      cheapesteth = "You should buy Ethereum from Coingecko";    
     }
 
 
     return ( 
       <div className="App">
 
-        <div className="MyTitle">
 
-
-        </div>
         <div className = "ExchangeHeader">
             <h1>
               <center>
@@ -125,14 +121,9 @@ class App extends Component {
         <text><b>{cheapestbtc}</b></text>
         <p>
         </p>
-        
-        <text>{cheapesteth}</text>
+        <text><b>{cheapesteth}</b></text>
         </center>
-        
-        <h2>
-          
-          
-        </h2>
+
 
         </div>
 
