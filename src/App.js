@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 
+
+
 var NumberFormat = require('react-number-format');
 
 class App extends Component { 
@@ -21,6 +23,8 @@ class App extends Component {
   
 
   componentDidMount(){
+
+    document.title = "Cryptocurrency Comparer"
   //USING PROMISE.all() from https://gomakethings.com/waiting-for-multiple-all-api-responses-to-complete-with-the-vanilla-js-promise.all-method/
   Promise.all([
     axios.get('https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,IOT&tsyms=USD')
@@ -62,23 +66,24 @@ class App extends Component {
      btc2 = (Object.keys(this.state.cryptos2).map((key)=>(this.state.cryptos2['bitcoin'].usd)));//bitcoin on coingecko
      ETH2 = (Object.keys(this.state.cryptos2).map((key)=>(this.state.cryptos2['ethereum'].usd)));
 
+
     var cheapestbtc, cheapesteth;
     
     if(btc1[0]<btc2[0])
     {
-      cheapestbtc = "You should buy Bitcoin from CryptoCompare";
+      cheapestbtc = "Right now, you should buy Bitcoin from CryptoCompare and sell it on Coingecko.";
     }
     else if(btc2[0]<btc1[0])
     {
-      cheapestbtc = "You should buy Bitcoin from Coingecko";
+      cheapestbtc = "Right now, you should buy Bitcoin from Coingecko and sell it on CryptoCompare";
     }  
     if(ETH1[0]<ETH2[0])
     {
-      cheapesteth = "You should buy Ethereum from CryptoCompare";
+      cheapesteth = "You should buy Ethereum from CryptoCompare and sell it on Coingecko";
     }
     else if(ETH2[0]<ETH1[0])
     {
-      cheapesteth = "You should buy Ethereum from Coingecko";    
+      cheapesteth = "You should buy Ethereum from Coingecko and sell it on CryptoCompare";    
     }
 
 
