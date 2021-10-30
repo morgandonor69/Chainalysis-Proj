@@ -1,7 +1,7 @@
 # Chainalysis-Proj
 A sample project made for Chainalysis Application
 
-# Carry out the following steps:
+# Carry out the following steps to start the program:
 
 # Step 1:
 git clone [repository url]
@@ -14,3 +14,5 @@ npm install
 
 # Step 4:
 npm start
+
+
