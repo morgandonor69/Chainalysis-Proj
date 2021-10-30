@@ -6,3 +6,4 @@
   3. I would not make any changes as I believe my solution would work.
 
   4. I would have done more CSS to format the site better, as well as checking other sites to see if their API's were able to be accessed easier. These two sites are the two crypto sites I use most often, so that is why I decided on using them.
+ 
